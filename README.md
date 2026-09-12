@@ -1,5 +1,9 @@
 ﻿# SuperClaude
 
+<p>
+  <b>English</b> | <a href="./README.ko.md">한국어</a>
+</p>
+
 > A structured engineering toolkit, specialist agents, and workflow skills for Claude Code.
 
 SuperClaude transforms [Claude Code](https://docs.claude.com/en/docs/claude-code) into a systematic software engineering platform. It introduces structured command dispatching, domain-specialist agent personas, and a comprehensive library of engineering workflow skills—covering everything from requirements discovery and deep research to test-driven implementation and code review.
