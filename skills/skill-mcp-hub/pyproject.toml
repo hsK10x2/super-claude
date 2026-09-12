@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skill-mcp-hub"
+version = "0.1.0"
+description = "Universal MCP Server Hub for AI Agent Skills across Antigravity, Claude, Cursor, and more"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0.0",
+]
+
+[project.scripts]
+skill-hub = "skill_mcp_hub.cli:main"
