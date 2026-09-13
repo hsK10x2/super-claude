@@ -12,9 +12,10 @@ SuperClaude transforms [Claude Code](https://docs.claude.com/en/docs/claude-code
 
 ## Highlights
 
-- **31 Slash Commands**: Explicit, namespaced commands (`/super-claude:*`) for repeatable engineering tasks.
+- **32 Slash Commands**: Explicit, namespaced commands (`/super-claude:*`) for repeatable engineering tasks.
 - **21 Specialist Agents**: Context-tailored personas for architecture, security audits, root-cause triage, and performance profiling.
-- **31 Workflow Skills**: Reusable agent skills including TDD, systematic debugging, token budgeting, and the beginner-friendly `claude-super-guide`.
+- **32 Workflow Skills**: Reusable agent skills including TDD, systematic debugging, token budgeting, `claude-super-guide`, and `/btw`.
+- **Side-Channel Q&A (`/btw`)**: Ask quick questions without polluting conversation memory or derailing ongoing tasks.
 - **User Guide Included**: Run `/claude-super-guide` anytime for real-world scenarios and operational cheatsheets.
 - **Automated Skill Synchronization**: Built-in `/super-claude:skill-update` tool to keep installed definitions in sync with Git.
 - **Single-Command Setup**: Native PowerShell and Bash installers targeting `~/.claude/`.
@@ -58,6 +59,7 @@ Type `/super-claude` to view the central dashboard, or trigger the practical gui
 
 ```text
 > /claude-super-guide
+> /btw what was the database port?
 > /super-claude:recommend
 > /super-claude:brainstorm "Authentication and Session Architecture"
 > /super-claude:research "Zero-trust service-to-service communication patterns"
@@ -76,6 +78,7 @@ All commands are namespaced under `/super-claude:` to avoid collision with custo
 | :--- | :--- | :--- |
 | `/super-claude` | Main dashboard and command index | `/super-claude` |
 | `/claude-super-guide` | Practical manual and real-world scenario cheatsheet | `/claude-super-guide` |
+| `/btw` | Quick side Q&A without polluting context or breaking workflow | `/btw what was the Redis TTL?` |
 | `/super-claude:recommend` | Context-aware command suggestions based on git state | `/super-claude:recommend` |
 | `/super-claude:skill-update` | Audit and synchronize installed skills with repository | `/super-claude:skill-update` |
 | `/super-claude:index-repo` | Repository structure indexing for context minimization | `/super-claude:index-repo` |
@@ -143,6 +146,7 @@ SuperClaude includes 21 persona definitions located in `agents/`. Agents can be 
 
 The `skills/` directory provides modular Agent Skills adhering to the open `SKILL.md` specification:
 
+- `btw`: Ephemeral side-channel Q&A protocol avoiding context pollution and task derailment
 - `claude-super-guide`: Accessible user manual, cheatsheets, and scenario-based workflow guide
 - `architecture-design`: System modeling, architectural trade-offs, and boundary maps
 - `brainstorming`: Socratic exploration of intent, edge cases, and technical assumptions

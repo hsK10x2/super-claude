@@ -12,10 +12,11 @@ SuperClaude는 [Claude Code](https://docs.claude.com/en/docs/claude-code)를 전
 
 ## 핵심 기능
 
-- **31개 슬래시 명령어**: 반복적인 개발 작업을 표준화한 `/super-claude:*` 네임스페이스 명령어 제공
+- **32개 슬래시 명령어**: 반복적인 개발 작업을 표준화한 `/super-claude:*` 네임스페이스 명령어 제공
 - **21명 도메인 특화 에이전트**: 아키텍처 설계, 보안 감사, 근본 원인 분석, 성능 프로파일링 등 맥락에 최적화된 페르소나
-- **31종 워크플로우 스킬**: TDD, 체계적 디버깅, 토큰 예산 관리 및 누구나 쉽게 배우는 `claude-super-guide` 탑재
-- **초심자/팀원 친화적 실전 가이드**: `/claude-super-guide`로 4가지 실전 시나리오와 명령어 총람 상시 조회 가능
+- **32종 워크플로우 스킬**: TDD, 체계적 디버깅, 토큰 예산 관리, 누구나 쉽게 배우는 `claude-super-guide`, 사이드 Q&A `btw` 탑재
+- **컨텍스트 오염 방지 사이드 Q&A (`/btw`)**: 진행 중인 본 작업을 방해하지 않고 딴길로 새지 않게 가볍게 묻고 답하는 기능
+- **초심자/팀원 친화적 실전 가이드**: `/claude-super-guide`로 4대 실전 시나리오와 명령어 총람 상시 조회 가능
 - **자동 스킬 동기화 도구**: 로컬 설치본과 Git 저장소 간의 상태를 감사하고 갱신하는 `/super-claude:skill-update` 탑재
 - **원클릭 설치 지원**: `~/.claude/` 경로에 자동 배치되는 Windows PowerShell 및 Bash 스크립트 제공
 
@@ -58,6 +59,7 @@ claude
 
 ```text
 > /claude-super-guide
+> /btw 아까 정한 Redis TTL이 얼마였지?
 > /super-claude:recommend
 > /super-claude:brainstorm "인증 및 세션 아키텍처 설계"
 > /super-claude:research "마이크로서비스 간 무상태 통신 패턴 및 벤치마크"
@@ -76,6 +78,7 @@ claude
 | :--- | :--- | :--- |
 | `/super-claude` | 프레임워크 메인 대시보드 및 명령어 색인 호출 | `/super-claude` |
 | `/claude-super-guide` | 초심자 및 팀원을 위한 상황별 실전 활용 매뉴얼 | `/claude-super-guide` |
+| `/btw` | 컨텍스트 오염 및 작업 방해 없는 사이드 즉시 Q&A | `/btw 아까 정한 Redis TTL이 얼마였지?` |
 | `/super-claude:recommend` | Git 상태 및 프로젝트 맥락에 따른 다음 권장 작업 제안 | `/super-claude:recommend` |
 | `/super-claude:skill-update` | 로컬에 설치된 스킬/명령어를 저장소와 동기화 및 감사 | `/super-claude:skill-update` |
 | `/super-claude:index-repo` | 컨텍스트 토큰 최적화를 위한 저장소 구조 인덱싱 | `/super-claude:index-repo` |
@@ -143,6 +146,7 @@ claude
 
 `skills/` 디렉터리는 오픈 Agent Skill 규격(`SKILL.md`)을 준수하는 모듈형 스킬을 포함합니다:
 
+- `btw`: 메인 작업 흐름을 방해하지 않고 컨텍스트를 보호하는 사이드 채널 즉답 프로토콜
 - `claude-super-guide`: 초심자 친화적 실전 가이드, 4대 워크플로우 시나리오 및 치트시트
 - `architecture-design`: 시스템 모델링, 아키텍처 트레이드오프 평가 및 경계 설계
 - `brainstorming`: 소크라테스식 문답을 통한 기획 의도 구체화 및 전제 검증

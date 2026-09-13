@@ -65,10 +65,11 @@ Supported agent roles:
 - `@quality-engineer` : Test strategy, edge case mapping, and QA sign-off
 - `@refactoring-expert` : Technical debt resolution and architectural cleanups
 
-### Status and Guidance
+### Status, Guidance and Side-Channels
 ```text
 /super-claude:recommend                - Suggest optimal next commands based on project context
 /super-claude:claude-super-guide       - Practical beginner-friendly manual and workflow guide
+/super-claude:btw [question]           - Quick side question without polluting context or derailing work
 /super-claude                          - Display this command index
 ```
 
@@ -81,6 +82,7 @@ Supported agent roles:
 | `/super-claude:implement` | Structured development | `/super-claude:implement user login` |
 | `/super-claude:troubleshoot` | Debugging and triage | `/super-claude:troubleshoot memory leak` |
 | `/claude-super-guide` | Practical user manual | `/claude-super-guide` |
+| `/btw` | Quick side Q&A | `/btw what was the Redis TTL?` |
 | `/super-claude:skill-update` | Sync and update skills | `/super-claude:skill-update` |
 | `/super-claude:index-repo` | Index repository | `/super-claude:index-repo` |
 | `/super-claude:agent` | Specialist agents | `/super-claude:agent pm-agent` |
