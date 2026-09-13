@@ -1,4 +1,4 @@
-﻿---
+---
 name: skill-update
 description: Synchronizes, audits, and updates Claude Code skills, slash commands, and specialist agents from local repositories or remote sources. Use when the user asks to update skills ("스킬 업데이트해줘", "skill update", "/skill-update"), audit existing command definitions, or synchronize ~/.claude with the latest repository state.
 ---

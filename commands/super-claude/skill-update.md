@@ -1,4 +1,4 @@
-﻿---
+---
 name: skill-update
 description: Audit and synchronize SuperClaude skills, commands, and agents
 ---

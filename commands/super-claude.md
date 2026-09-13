@@ -1,4 +1,4 @@
-﻿---
+---
 name: super-claude
 description: SuperClaude command dispatcher - Use /super-claude [command] to access all SuperClaude features
 ---
@@ -68,6 +68,7 @@ Supported agent roles:
 ### Status and Guidance
 ```text
 /super-claude:recommend                - Suggest optimal next commands based on project context
+/super-claude:claude-super-guide       - Practical beginner-friendly manual and workflow guide
 /super-claude                          - Display this command index
 ```
 
@@ -79,6 +80,7 @@ Supported agent roles:
 | `/super-claude:brainstorm` | Requirements discovery | `/super-claude:brainstorm auth service` |
 | `/super-claude:implement` | Structured development | `/super-claude:implement user login` |
 | `/super-claude:troubleshoot` | Debugging and triage | `/super-claude:troubleshoot memory leak` |
+| `/claude-super-guide` | Practical user manual | `/claude-super-guide` |
 | `/super-claude:skill-update` | Sync and update skills | `/super-claude:skill-update` |
 | `/super-claude:index-repo` | Index repository | `/super-claude:index-repo` |
 | `/super-claude:agent` | Specialist agents | `/super-claude:agent pm-agent` |

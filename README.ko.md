@@ -1,4 +1,4 @@
-﻿# SuperClaude
+# SuperClaude
 
 <p>
   <a href="./README.md">English</a> | <b>한국어</b>
@@ -12,9 +12,10 @@ SuperClaude는 [Claude Code](https://docs.claude.com/en/docs/claude-code)를 전
 
 ## 핵심 기능
 
-- **30개 슬래시 명령어**: 반복적인 개발 작업을 표준화한 `/super-claude:*` 네임스페이스 명령어 제공
+- **31개 슬래시 명령어**: 반복적인 개발 작업을 표준화한 `/super-claude:*` 네임스페이스 명령어 제공
 - **21명 도메인 특화 에이전트**: 아키텍처 설계, 보안 감사, 근본 원인 분석, 성능 프로파일링 등 맥락에 최적화된 페르소나
-- **30종 워크플로우 스킬**: TDD, 체계적 디버깅, 토큰 예산 관리, 주니어 온보딩용 코드 설명서 생성 등 검증된 엔지니어링 프로세스
+- **31종 워크플로우 스킬**: TDD, 체계적 디버깅, 토큰 예산 관리 및 누구나 쉽게 배우는 `claude-super-guide` 탑재
+- **초심자/팀원 친화적 실전 가이드**: `/claude-super-guide`로 4가지 실전 시나리오와 명령어 총람 상시 조회 가능
 - **자동 스킬 동기화 도구**: 로컬 설치본과 Git 저장소 간의 상태를 감사하고 갱신하는 `/super-claude:skill-update` 탑재
 - **원클릭 설치 지원**: `~/.claude/` 경로에 자동 배치되는 Windows PowerShell 및 Bash 스크립트 제공
 
@@ -53,10 +54,10 @@ chmod +x install.sh
 claude
 ```
 
-대화창에 `/super-claude`를 입력하여 전체 대시보드를 확인하거나, 필요한 작업을 직접 호출합니다:
+대화창에 `/claude-super-guide`를 입력하여 실전 가이드를 읽거나, 필요한 작업을 직접 호출합니다:
 
 ```text
-> /super-claude
+> /claude-super-guide
 > /super-claude:recommend
 > /super-claude:brainstorm "인증 및 세션 아키텍처 설계"
 > /super-claude:research "마이크로서비스 간 무상태 통신 패턴 및 벤치마크"
@@ -68,6 +69,16 @@ claude
 ## 명령어 레퍼런스
 
 기존 프로젝트의 자체 커스텀 명령어와의 충돌을 방지하기 위해 모든 명령어가 `/super-claude:` 네임스페이스로 격리되어 있습니다.
+
+### 안내 및 도구 관리 (Guidance and Tooling)
+
+| 명령어 | 설명 | 사용 예시 |
+| :--- | :--- | :--- |
+| `/super-claude` | 프레임워크 메인 대시보드 및 명령어 색인 호출 | `/super-claude` |
+| `/claude-super-guide` | 초심자 및 팀원을 위한 상황별 실전 활용 매뉴얼 | `/claude-super-guide` |
+| `/super-claude:recommend` | Git 상태 및 프로젝트 맥락에 따른 다음 권장 작업 제안 | `/super-claude:recommend` |
+| `/super-claude:skill-update` | 로컬에 설치된 스킬/명령어를 저장소와 동기화 및 감사 | `/super-claude:skill-update` |
+| `/super-claude:index-repo` | 컨텍스트 토큰 최적화를 위한 저장소 구조 인덱싱 | `/super-claude:index-repo` |
 
 ### 리서치 및 분석 (Research and Analysis)
 
@@ -96,14 +107,10 @@ claude
 | `/super-claude:cleanup` | 미사용 사장 코드(Dead Code) 제거 및 디렉터리 구조 정돈 | `/super-claude:cleanup` |
 | `/super-claude:improve` | 대상 코드의 가독성 및 유지보수성 리팩토링 | `/super-claude:improve src/auth.py` |
 
-### 도구 및 저장소 관리 (Repository and Tooling)
+### 저장소 및 워크플로우 (Repository and Workflow)
 
 | 명령어 | 설명 | 사용 예시 |
 | :--- | :--- | :--- |
-| `/super-claude` | 프레임워크 메인 대시보드 및 명령어 색인 호출 | `/super-claude` |
-| `/super-claude:recommend` | Git 상태 및 프로젝트 맥락에 따른 다음 권장 작업 제안 | `/super-claude:recommend` |
-| `/super-claude:index-repo` | 컨텍스트 토큰 최적화를 위한 저장소 구조 인덱싱 | `/super-claude:index-repo` |
-| `/super-claude:skill-update` | 로컬에 설치된 스킬/명령어를 저장소와 동기화 및 감사 | `/super-claude:skill-update` |
 | `/super-claude:git` | Conventional Commits 규격 커밋 메시지 작성 및 Git 작업 지원 | `/super-claude:git` |
 | `/super-claude:task` | 태스크 세분화, 의존성 매핑 및 마일스톤 추적 | `/super-claude:task` |
 | `/super-claude:workflow` | 다단계 복합 엔지니어링 파이프라인 조율 | `/super-claude:workflow` |
@@ -136,6 +143,7 @@ claude
 
 `skills/` 디렉터리는 오픈 Agent Skill 규격(`SKILL.md`)을 준수하는 모듈형 스킬을 포함합니다:
 
+- `claude-super-guide`: 초심자 친화적 실전 가이드, 4대 워크플로우 시나리오 및 치트시트
 - `architecture-design`: 시스템 모델링, 아키텍처 트레이드오프 평가 및 경계 설계
 - `brainstorming`: 소크라테스식 문답을 통한 기획 의도 구체화 및 전제 검증
 - `browser-agent`: 웹 브라우저 기반 E2E 동작 테스트 및 UI 시각적 검증
@@ -164,50 +172,6 @@ claude
 # 터미널에서 Python 스크립트로 직접 실행 시
 python skills/skill-update/scripts/sync_skills.py --clean
 ```
-
-스크립트가 `~/.claude/` 디렉터리를 감사하고, 변경된 파일을 복사하며, 과거 레거시 산출물을 정리한 후 결과를 요약 출력합니다.
-
----
-
-## 디렉터리 구조
-
-```text
-super-claude/
-├── commands/
-│   ├── super-claude.md                 # 메인 디스패처 (/super-claude)
-│   └── super-claude/                   # 30개 네임스페이스 명령어 (/super-claude:*)
-│       ├── agent.md
-│       ├── brainstorm.md
-│       ├── implement.md
-│       ├── research.md
-│       ├── skill-update.md
-│       └── ...
-├── agents/                             # 21개 도메인 전문 에이전트 정의
-│   ├── system-architect.md
-│   ├── backend-architect.md
-│   ├── pm-agent.md
-│   └── ...
-├── skills/                             # 30개 모듈형 워크플로우 스킬
-│   ├── skill-update/                   # 자체 동기화 엔진
-│   ├── deep-research/
-│   ├── systematic-debugging/
-│   └── ...
-├── install.ps1                         # Windows 설치 스크립트
-├── install.sh                          # macOS / Linux 설치 스크립트
-├── .gitignore
-├── LICENSE
-├── README.md                           # 영문 설명서
-└── README.ko.md                        # 한국어 설명서
-```
-
----
-
-## 기여 안내
-
-풀 리퀘스트와 개선 제안을 환영합니다. 변경 사항을 작성할 때 다음 기준을 준수해 주시기 바랍니다:
-1. 프롬프트 및 문서에 과도한 장식용 이모티콘을 사용하지 않습니다.
-2. 모든 스킬은 유효한 YAML frontmatter를 포함한 표준 `SKILL.md` 구조를 갖춰야 합니다.
-3. 커밋 메시지는 Conventional Commits 규격(`feat:`, `fix:`, `refactor:`, `docs:`)을 준수합니다.
 
 ---
 
